@@ -108,7 +108,7 @@
 <p>2、安装Hexo：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo npm install hexo-cli -g</div></pre></td></tr></table></figure><br>3、创建一个本地安放博客的路径：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ mkdir /your/path/for/blog</div></pre></td></tr></table></figure><br>4、进入第3步创建的文件夹，初始化hexo，安装依赖包：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ cd /your/path/for/blog</div><div class="line">$ hexo init</div><div class="line">$ npm install</div></pre></td></tr></table></figure><br>5、本地查看，先敲击下面的命令，然后在浏览器访问<a href="http://localhost:4000/" target="_blank" rel="external">本地端口4000</a> ：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure><br>这里有几点需要注意：<br>1、由于国内的网络环境，安装包的下载用时可能会非常长。所以你懂的……<br>2、安装Hexo可能会报错，对于这种情况，网上说法不一，有的说要换源，有的说要更改指令。由于在这一步卡了很久，我基本把找到的办法都尝试了一遍。这种情况因人而异，建议在重装前把先前失败后留下的残余文件清理一遍，其实就是你创建的那个安放博客的目录，否则可能在后续安装的过程中会产生冲突。</p>
 <p>如果顺利的话，到此应该就能在浏览器看到自己的本地初始化博客了。</p>
 <p><strong>下面讲一下Github上的配置</strong></p>
-<p>1、登陆github，创建一个新的仓库，也就是你的博客地址:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">https://github.com/new</div></pre></td></tr></table></figure><br>2、<strong>Repository name</strong>务必按照如下格式，设置为<strong>public</strong>，最后点击 <strong>create repository</strong>：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&quot;你的github名字&quot;.github.io</div></pre></td></tr></table></figure><br>3、接着上一步，现在能看到Quick steup，点击<strong>SSH</strong>，拷贝右边路径。</p>
+<p>1、登陆github，创建一个新的仓库，也就是你的博客地址:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">https://github.com/new</div></pre></td></tr></table></figure><br>2、<strong>Repository name</strong>务必按照如下格式，设置为<strong>public</strong>，最后点击 <strong>create repository</strong>：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&quot;你的github名字&quot;.github.io</div></pre></td></tr></table></figure><br>3、接着上一步，现在能看到Quick steup，点击<strong>SSH</strong>，检查一下右边路径。</p>
 <p>4、如果第一次使用git，需要在本地配置git个人信息，打开终端输入：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git config --global user.name &quot;你的github上的名字&quot;</div><div class="line">$ git config --global user.mail &quot;你注册github的邮箱&quot;</div></pre></td></tr></table></figure><br>5、生成ssh密钥：输入下列指令，然后一路敲回车：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ssh-keygen -t rsa -C &quot;你注册github的邮箱&quot;</div></pre></td></tr></table></figure><br>6、找到刚刚生成的ssh密钥的路径，打开对应文件，将密钥拷贝出来：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ cd ~/.ssh</div><div class="line">$ less id_rsa.pub</div></pre></td></tr></table></figure><br>7、在浏览器登录github，点击头像，点击<strong>Settings</strong>，左侧找到<strong>SSH and GPG keys</strong>，点击进入。</p>
 <p>8、点击右上角<strong>New SSH key</strong>，Title自定义，Key的内容为第6步拷贝的内容，最后点击<strong>Add SSH key</strong>。</p>
 <p>9、终端输入下面指令，验证ssh：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ssh -T git@github.com</div></pre></td></tr></table></figure></p>
@@ -119,7 +119,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/05/开篇：Hexo-Github搭建的个人博客/" data-id="cj9no1xz20000efgsz407u73b" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/05/开篇：Hexo-Github搭建的个人博客/" data-id="cj9no9nwe000028gs8r6kcfvn" class="article-share-link">Share</a>
       
       
     </footer>
@@ -164,7 +164,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/05/hello-world/" data-id="cj9no1xz70001efgsd644xwoq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/05/hello-world/" data-id="cj9no9nwi000128gs5kt6lyxt" class="article-share-link">Share</a>
       
       
     </footer>
