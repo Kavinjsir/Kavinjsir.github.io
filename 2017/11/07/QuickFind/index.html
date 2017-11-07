@@ -81,16 +81,17 @@
 
 
 
-<meta name="description" content="Thoughts of Coding">
-<meta property="og:type" content="website">
-<meta property="og:title" content="King&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="开篇写什么一直没拿定，最后选择讲并查集是因为这两日一直在看，而且这块内容较为简单。至于为什么开题是“数据结构与算法”？因为这是我这段时间主要在学习的内容，我打算通过写博文的方式把学完的知识再巩固一遍，顺便把第一遍没来得及研究的东西尝试一下。另外，这一系列的code我会以c++为主。好了，废话不多说，让我们开始吧。 并查集，通常指英文中Union Find的问题。举个例子，一张地图，上面有若干城市。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据结构与算法（一）并查集">
+<meta property="og:url" content="http://yoursite.com/2017/11/07/QuickFind/index.html">
 <meta property="og:site_name" content="King&#39;s Blog">
-<meta property="og:description" content="Thoughts of Coding">
+<meta property="og:description" content="开篇写什么一直没拿定，最后选择讲并查集是因为这两日一直在看，而且这块内容较为简单。至于为什么开题是“数据结构与算法”？因为这是我这段时间主要在学习的内容，我打算通过写博文的方式把学完的知识再巩固一遍，顺便把第一遍没来得及研究的东西尝试一下。另外，这一系列的code我会以c++为主。好了，废话不多说，让我们开始吧。 并查集，通常指英文中Union Find的问题。举个例子，一张地图，上面有若干城市。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-11-07T16:28:35.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="King&#39;s Blog">
-<meta name="twitter:description" content="Thoughts of Coding">
+<meta name="twitter:title" content="数据结构与算法（一）并查集">
+<meta name="twitter:description" content="开篇写什么一直没拿定，最后选择讲并查集是因为这两日一直在看，而且这块内容较为简单。至于为什么开题是“数据结构与算法”？因为这是我这段时间主要在学习的内容，我打算通过写博文的方式把学完的知识再巩固一遍，顺便把第一遍没来得及研究的东西尝试一下。另外，这一系列的code我会以c++为主。好了，废话不多说，让我们开始吧。 并查集，通常指英文中Union Find的问题。举个例子，一张地图，上面有若干城市。">
 
 
 
@@ -120,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/11/07/QuickFind/"/>
 
 
 
 
 
-  <title>King's Blog</title>
+  <title>数据结构与算法（一）并查集 | King's Blog</title>
   
 
 
@@ -155,8 +156,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -229,9 +229,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -261,9 +261,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/11/07/QuickFind/" itemprop="url">数据结构与算法（一）并查集</a></h1>
+          <h1 class="post-title" itemprop="name headline">数据结构与算法（一）并查集</h1>
         
 
         <div class="post-meta">
@@ -335,9 +333,7 @@
       
 
       
-        
-          
-            <p>开篇写什么一直没拿定，最后选择讲并查集是因为这两日一直在看，而且这块内容较为简单。<br>至于为什么开题是“数据结构与算法”？<br>因为这是我这段时间主要在学习的内容，我打算通过写博文的方式把学完的知识再巩固一遍，顺便把第一遍没来得及研究的东西尝试一下。<br>另外，这一系列的code我会以c++为主。<br>好了，废话不多说，让我们开始吧。</p>
+        <p>开篇写什么一直没拿定，最后选择讲并查集是因为这两日一直在看，而且这块内容较为简单。<br>至于为什么开题是“数据结构与算法”？<br>因为这是我这段时间主要在学习的内容，我打算通过写博文的方式把学完的知识再巩固一遍，顺便把第一遍没来得及研究的东西尝试一下。<br>另外，这一系列的code我会以c++为主。<br>好了，废话不多说，让我们开始吧。</p>
 <p>并查集，通常指英文中<strong>Union Find</strong>的问题。<br>举个例子，一张地图，上面有若干城市。城市间本不相通，但是我们可以用铁轨将两个城市连通起来。然后，我们希望能快速得知能否从一个城市出发到达另一个城市。<br>值得注意的是，这里期望得到的答案仅仅是 <strong>能</strong> 或者 <strong>不能</strong> ，并查集问题不关心 <strong>怎样到达</strong>。</p>
 <p>因此，简单说，并查集主要分为两个问题，一是 <strong>联通</strong> <strong>Union</strong>；二是 <strong>查找</strong> <strong>find</strong>。<br>在实际代码中，通常使用一个数组来维护每个结点（城市）和它联通的结点的关系，比如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">int val = array[i] //array.length == n</div></pre></td></tr></table></figure><br>上述代码中，<strong>n</strong>表示总共有多少个结点；<strong>i</strong>为数组的索引值，指代结点；<strong>val</strong>表示与<strong>i</strong>连通的结点，因此val &lt; n。</p>
 <p>有了相关数据结构维护数据后，接下来需要声明及定义相关函数（方法），在并查集，主要有三个方法：</p>
@@ -354,8 +350,6 @@
 <p><strong>总结</strong><br>到此并查集的基础知识就讨论完了，尽管在多次测试下，第二种优化都领先其他方法，但是从严谨的角度，个人仍然偏向用第四版代码，即路径压缩。这里存在两个问题，尚未完全解决：<br>1.首先路径压缩的过程是会改变“树高”的，但是rank值并未在此更新，事实上似乎也没有必要更新，这是为什么呢？<br>2.既然路径压缩是在第三种优化方式上的加强，那为何不把路径压缩也加入到第二种优化方式里面呢？（我做了相关的测试，结果却是比原来更慢了。）</p>
 <p>最后，本次并查集的学习参考了<a href="https://github.com/liuyubobobo" target="_blank" rel="external">Yubo Liu</a>的相关代码，本人目前也是通过他的课程在进行相关知识的复习、学习，特此表示感谢！</p>
 
-          
-        
       
     </div>
     
@@ -372,177 +366,28 @@
       
 
       
-
-      
-
       
       
-        <div class="post-eof"></div>
+
       
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/05/开篇：Hexo-Github搭建的个人博客/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tony King">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://oyy735z2r.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-10-21%20%E4%B8%8B%E5%8D%887.32.35.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="King's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/11/05/开篇：Hexo-Github搭建的个人博客/" itemprop="url">Hello King's Blog</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-05T23:32:38+08:00">
-                2017-11-05
-              </time>
+              <a href="/2017/11/05/开篇：Hexo-Github搭建的个人博客/" rel="next" title="Hello King's Blog">
+                <i class="fa fa-chevron-left"></i> Hello King's Blog
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/11/05/开篇：Hexo-Github搭建的个人博客/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/11/05/开篇：Hexo-Github搭建的个人博客/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2017/11/05/开篇：Hexo-Github搭建的个人博客/" class="leancloud_visitors" data-flag-title="Hello King's Blog">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <h3 id="伊始"><a href="#伊始" class="headerlink" title="伊始"></a>伊始</h3><p>并非所有事都需要充分的理由，比如此间的诞生，仅仅是想而已。自今天7月实习以来，coding日渐成为生活中重要的一部分，是形势所趋，也是兴致始来。我开始关注各大程序员公众号、浏览各种业内主流网站，在这之中，我见识了几位资深coder的独立博客。</p>
-<p>我对独立博客的最初感受是，它的内容与那些主流网站注册的博客内容很不同，谈技术往往更深入，谈生活往往更真实，在独立博客总能找到货真价实的东西。在这个过程中，我看到了<a href="http://wuchong.me/" target="_blank" rel="external">Jark's Blog</a>。在看他的<a href="http://wuchong.me/blog/2013/12/13/hello-%E7%8B%AC%E7%AB%8B%E5%8D%9A%E5%AE%A2/" target="_blank" rel="external">《Hello独立博客》</a>时，我第一次萌生了搭建个人博客的想法。</p>
-<p>自九月准备秋招起，我每天大部分时间都泡在牛客网、LeetCode、Java书本上，这其中学习了很多东西，但也让我感到了隐患：</p>
-<p><strong>一是有些知识点并非过一遍就能掌握，需要反复练习、值得深入了解。</strong></p>
-<p><strong>二是短时间接触的东西多了不记记很容易有所忘记。</strong></p>
-<p>于是马上想到的办法是用有道云笔记把每天学到的东西都做记录，这个习惯留到了现在。但是我始终觉得，这样是不够的。</p>
-<p><strong>首先，我一直认为干这行闭门造车是很困难的，交流是更有效的进步方法，尤其是当技术在不断更新时。</strong></p>
-<p><strong>其次，就未来职业发展考虑，有一个展示自己的平台当是很有优势的。</strong></p>
-<p>所以，即使明知自己是个技术小白，搭建独立博客的想法却愈发明朗，尤其是在B站看见了<a href="https://space.bilibili.com/18940974#!/" target="_blank" rel="external">船长俱乐部</a>后。</p>
-<p>考虑到自身经验不足，在正式开始前，算是做了一定的准备，包括看视频、读文档，最终选择了<strong>Hexo+Github</strong>这种比较容易的方式。（<strong>其实更早的时候看到有人用SSM框架完全自主搭建：<a href="https://github.com/saysky/ForestBlog" target="_blank" rel="external">一个简单漂亮的SSM(Spring+SpringMVC+Mybatis)博客系统</a>，感觉甚是酷炫。</strong>）</p>
-<p>从技术上说没有多少难度，Hexo甚至有中文官网供参考：<a href="https://hexo.io/zh-cn" target="_blank" rel="external">快速、简洁且高效的博客框架</a>，船长的视频<a href="https://www.bilibili.com/video/av12892750/" target="_blank" rel="external">[Crazy Blog] 利用Hexo搭建自己的个人博客(Mac)</a>讲解得也够细。</p>
-<p>然而真正到了实际操作仍然磕磕绊绊，网络环境是主要原因，本地环境混乱可能也造成了一定麻烦（比如安装Hexo时找不到python2路径）。比较大的问题大约有两处，因为没有截图，在此就不赘述了。当时上网查找资料，竟无人遇到与我相似的问题。但几次清空、重装后竟奇迹般地通过，算是幸运了。经历这一遭也感觉对Mac系统（本质上也是linux吧）理解还不够。在此概述一下Mac安装的过程：</p>
-<p><strong>首先是Hexo的安装及初始化</strong></p>
-<p>1、安装git、Node.js</p>
-<p>2、安装Hexo：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo npm install hexo-cli -g</div></pre></td></tr></table></figure><br>3、创建一个本地安放博客的路径：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ mkdir /your/path/for/blog</div></pre></td></tr></table></figure><br>4、进入第3步创建的文件夹，初始化hexo，安装依赖包：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ cd /your/path/for/blog</div><div class="line">$ hexo init</div><div class="line">$ npm install</div></pre></td></tr></table></figure><br>5、本地查看，先敲击下面的命令，然后在浏览器访问<a href="http://localhost:4000/" target="_blank" rel="external">本地端口4000</a> ：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure><br>这里有几点需要注意：<br>1、由于国内的网络环境，安装包的下载用时可能会非常长。所以你懂的……<br>2、安装Hexo可能会报错，对于这种情况，网上说法不一，有的说要换源，有的说要更改指令。由于在这一步卡了很久，我基本把找到的办法都尝试了一遍。这种情况因人而异，建议在重装前把先前失败后留下的残余文件清理一遍，其实就是你创建的那个安放博客的目录，否则可能在后续安装的过程中会产生冲突。</p>
-<p>如果顺利的话，到此应该就能在浏览器看到自己的本地初始化博客了。</p>
-<p><strong>下面讲一下Github上的配置</strong></p>
-<p>1、登陆github，创建一个新的仓库，也就是你的博客地址:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">https://github.com/new</div></pre></td></tr></table></figure><br>2、<strong>Repository name</strong>务必按照如下格式，设置为<strong>public</strong>，最后点击 <strong>create repository</strong>：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&quot;你的github名字&quot;.github.io</div></pre></td></tr></table></figure><br>3、接着上一步，现在能看到Quick steup，点击<strong>SSH</strong>，检查一下右边路径。</p>
-<p>4、如果第一次使用git，需要在本地配置git个人信息，打开终端输入：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git config --global user.name &quot;你的github上的名字&quot;</div><div class="line">$ git config --global user.mail &quot;你注册github的邮箱&quot;</div></pre></td></tr></table></figure><br>5、生成ssh密钥：输入下列指令，然后一路敲回车：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ssh-keygen -t rsa -C &quot;你注册github的邮箱&quot;</div></pre></td></tr></table></figure><br>6、找到刚刚生成的ssh密钥的路径，打开对应文件，将密钥拷贝出来：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ cd ~/.ssh</div><div class="line">$ less id_rsa.pub</div></pre></td></tr></table></figure><br>7、在浏览器登录github，点击头像，点击<strong>Settings</strong>，左侧找到<strong>SSH and GPG keys</strong>，点击进入。</p>
-<p>8、点击右上角<strong>New SSH key</strong>，Title自定义，Key的内容为第6步拷贝的内容，最后点击<strong>Add SSH key</strong>。</p>
-<p>9、终端输入下面指令，验证ssh：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ssh -T git@github.com</div></pre></td></tr></table></figure></p>
-<p>10、安装git插件，确保终端当前目录是你的博客，输入：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-deployer-git --save</div></pre></td></tr></table></figure></p>
-<p>11、配置_config.xml文件。用文本编辑器打开，找到#Deployment，如下配置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repo: git@github.com:YourName/YourName.github.io</div><div class="line">  branch: master</div></pre></td></tr></table></figure><br>12、部署至github。在你的博客目下输入下面指令，需要等待一段时间：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure></p>
-<p>现在在浏览器输入”YourName”.github.io，顺利的话就能看到自己的初始博客了！</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -552,10 +397,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -563,6 +409,20 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -799,6 +659,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
 
   
 
@@ -816,6 +680,18 @@
       <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
     
 
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2017/11/07/QuickFind/';
+          this.page.identifier = '2017/11/07/QuickFind/';
+          this.page.title = '数据结构与算法（一）并查集';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
     
 
   
@@ -841,7 +717,18 @@
 
 
   
-    <script id="cy_cmt_num" src="https://changyan.sohu.com/upload/plugins/plugins.list.count.js?clientId=cytiTwkX1"></script>
+    <script type="text/javascript">
+    (function(){
+      var appid = 'cytiTwkX1';
+      var conf = 'a7a49e12e419fa066382bcd2660aa32c';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      if (width < 960) {
+      window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){
+        window.changyan.api.config({appid:appid,conf:conf})});
+      }
+    })();
+    </script>
+    <script type="text/javascript" src="https://assets.changyan.sohu.com/upload/plugins/plugins.count.js"></script>
   
 
 
